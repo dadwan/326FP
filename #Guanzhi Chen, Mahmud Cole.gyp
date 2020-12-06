@@ -1,7 +1,9 @@
 #Guanzhi Chen, Mahmud Cole 
 
 from argparse input ArgumentParser
-import sys 
+import sys
+import pandas as pd
+
 
 class VinylRankingSystem 
 """Listing the best selling vinyls of all-time.
@@ -90,3 +92,36 @@ Print("You will make {f'(n_2019)} next year")
 """This function takes the textfile that lists the store's income over the last 10 years. 
 The data per year increases by a sum lsited as 'shape,' this algorithm predicts the amount of money generated to the store in 2020.
 """ 
+
+def metadata():
+  """This method lists different factors of the vinyl class, characteristics are used to categorize the vinyls
+  """ 
+  df = pd.read_csv("project.csv")
+  print("""1. vinyl_id
+  2. album_name
+  3. genre
+  4. track_amount
+  5. producer_id
+  6. runtime
+  7. first_available
+  8. weight
+  9. is_explicit
+  10. billboard
+  11. occ
+  12. aria
+  13. gfk 
+  14. oricon
+  15. gold
+  16. platinum
+  17. multi_platinum
+  18. diamond
+  19. discogs_rating
+  20. rollingstone_rating
+  21. amazon_rating
+  22. label_name
+  23. label_city
+  24. label_country
+  """)
+  n = int(input("pick a number to view your selected metadata "))
+  print(df.iloc[:,n - 1])
+
